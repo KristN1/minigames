@@ -43,7 +43,7 @@ def checkWin():
     for row in board:
         if row[0] == row[1] == row[2] != "_":
             return True
-    
+
     for col in range(3):
         if board[0][col] == board[1][col] == board[2][col] != "_":
             return True
@@ -53,6 +53,14 @@ def checkWin():
     
     if board[0][2] == board[1][1] == board[2][0] != "_":
         return True
+
+def checkSpace():
+    for row in board:
+        for col in row:
+            if col == "_":
+                return True
+
+    return False
 
 player = 1
 moves = 0
@@ -69,5 +77,10 @@ while True:
         renderBoard()
         print(f"Player {player} wins with {moves} moves!")
         break
-
+    
+    if not checkSpace():
+        renderBoard()
+        print("Tie!")
+        break
+    
     player = (player % 2) + 1
