@@ -7,3 +7,4 @@ Each folder has usually 2 files
 
 ## List of minigames
  - tic-tac-toe
+ - guess the number
